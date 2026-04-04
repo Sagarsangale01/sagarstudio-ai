@@ -1,0 +1,27 @@
+# --- Environments & Sensitive (Global & Subfolders) ---
+.env
+.env.*
+backend/.env
+frontend/ai-dev-frontend/.env
+venv/
+# --- Django Backend ---
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/db.sqlite3
+backend/media/
+backend/static_root/
+
+# --- React Frontend ---
+frontend/ai-dev-frontend/node_modules/
+frontend/ai-dev-frontend/build/
+frontend/ai-dev-frontend/dist/
+frontend/ai-dev-frontend/.npm
+npm-debug.log*
+
+# --- System & IDE ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
