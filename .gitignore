@@ -1,6 +1,5 @@
 # --- Environments & Sensitive (Global & Subfolders) ---
 .env
-.env.*
 backend/.env
 frontend/ai-dev-frontend/.env
 venv/
