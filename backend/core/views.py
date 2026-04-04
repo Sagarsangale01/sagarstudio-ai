@@ -7,7 +7,7 @@ from .services.openai_service import generate_response
 from .services.prompt_builder import (
     build_code_review_prompt, build_sql_prompt, build_api_prompt, 
     build_bug_fix_prompt, build_explain_prompt, build_converter_prompt, 
-    build_onboarding_guide_prompt
+    build_onboarding_guide_prompt, build_error_analysis_prompt
 )
 
 
@@ -160,6 +160,29 @@ def tech_onboarding(request):
         return Response({"error": "missing fields"}, status=400)
 
     prompt = build_onboarding_guide_prompt(goal, language, framework, database)
+    result = generate_response(prompt)
+
+    try:
+        parsed_result = json.loads(result)
+    except:
+        parsed_result = {"raw": result}
+
+    return Response(parsed_result)
+
+
+#---------------------error_analyzer------------------------------------
+
+@api_view(['POST'])
+def error_analyzer(request):
+    error = request.data.get("error")
+    language = request.data.get("language")
+    framework = request.data.get("framework")
+    database = request.data.get("database")
+
+    if not error or not language:
+        return Response({"error": "error and language required"}, status=400)
+
+    prompt = build_error_analysis_prompt(error, language, framework, database)
     result = generate_response(prompt)
 
     try:

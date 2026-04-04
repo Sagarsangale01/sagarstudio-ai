@@ -8,6 +8,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const menuItems = [
   { name: 'Code Review', icon: <CodeIcon /> },
@@ -16,6 +17,7 @@ const menuItems = [
   { name: 'Bug Fixer', icon: <BugReportIcon /> },
   { name: 'Code Explainer', icon: <MenuBookIcon /> },
   { name: 'Code Converter', icon: <SyncAltIcon /> },
+  { name: 'Error Analyzer', icon: <ErrorOutlineIcon /> },
   { name: 'Tech Onboarding', icon: <TerminalIcon /> }
 ];
 

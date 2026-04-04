@@ -10,3 +10,5 @@ export const apiGenerator = (data) => API.post('api-generator/', data);
 export const bugFixer = (data) => API.post('bug-fix/', data);
 export const explainCode = (data) => API.post('explain-code/', data);
 export const convertCode = (data) => API.post('convert-code/', data);
+export const techOnboarding = (data) => API.post('tech-onboarding/', data);
+export const errorAnalyzer = (data) => API.post('error-analyzer/', data);

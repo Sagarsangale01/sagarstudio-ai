@@ -186,3 +186,38 @@ Output Schema:
 
 Return ONLY valid JSON.
 """
+
+
+def build_error_analysis_prompt(error, language, framework, database):
+    framework_context = f" targeting the {framework} framework" if framework and framework != "None" else ""
+    database_context = f" with {database} database" if database and database != "None" else ""
+    
+    return f"""
+You are a senior {language} debugger and software architect{framework_context}{database_context}.
+
+Task: Analyze the following error message and provide a comprehensive breakdown.
+
+Analysis Requirements:
+1. What is wrong: A clear, concise explanation of the error.
+2. Why it's wrong: The root cause and underlying technical reason why this error occurred.
+3. Step-by-Step Solution: A detailed, numbered list of steps to fix the issue, including code snippets if necessary.
+
+Output Schema:
+{{
+  "what_is_wrong": "Brief summary of the error",
+  "why_it_is_wrong": "Detailed root cause analysis",
+  "solution_steps": [
+    {{
+      "step": "Step description",
+      "action": "What to change/run",
+      "code": "Optional code snippet or command"
+    }}
+  ],
+  "prevention_tips": ["How to avoid this error in the future"]
+}}
+
+Error Message:
+{error}
+
+Return ONLY valid JSON.
+"""

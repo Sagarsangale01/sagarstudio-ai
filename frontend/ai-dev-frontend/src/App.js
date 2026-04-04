@@ -8,6 +8,7 @@ import BugFixer from './pages/BugFixer';
 import CodeExplainer from './pages/CodeExplainer';
 import CodeConverter from './pages/CodeConverter';
 import NewTechGuide from './pages/NewTechGuide';
+import ErrorAnalyzer from './pages/ErrorAnalyzer';
 import { Box, Typography } from '@mui/material';
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         return <CodeConverter />;
       case 'Tech Onboarding':
         return <NewTechGuide />;
+      case 'Error Analyzer':
+        return <ErrorAnalyzer />;
       default:
         return (
           <Box className="animate-fade-in glass-panel" sx={{ p: 4, textAlign: 'center', mt: 4 }}>
