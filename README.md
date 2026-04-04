@@ -1,4 +1,4 @@
-# 🚀 AI Dev Assistant
+# 🚀 SagarStudio AI
 
 **A Premium, Full-Stack AI Ecosystem for Modern Software Engineering**
 

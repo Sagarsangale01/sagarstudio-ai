@@ -40,7 +40,7 @@ export default function Sidebar({ onSelect, activePage }) {
           <AutoAwesomeIcon />
         </Avatar>
         <Typography variant="h6" sx={{ fontWeight: 700, color: 'var(--text-primary)' }}>
-          DevAgent
+          SagarStudio AI
         </Typography>
       </Box>
 

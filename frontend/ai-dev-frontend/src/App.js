@@ -62,10 +62,10 @@ function App() {
         <Box sx={{ maxWidth: '1600px', width: '100%', mx: 'auto', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           <Box sx={{ mb: 4 }} className="animate-fade-in">
             <Typography variant="h3" sx={{ fontWeight: 700, letterSpacing: '-0.5px', background: 'linear-gradient(45deg, #fff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              AI Dev Assistant
+              SagarStudio AI
             </Typography>
             <Typography variant="subtitle1" sx={{ color: 'var(--text-secondary)', mt: 1 }}>
-              Elevate your coding workflow with AI-powered insights.
+              Your Signature Intelligence for Modern Software Engineering.
             </Typography>
           </Box>
           
