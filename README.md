@@ -12,7 +12,7 @@
 
 ## 🌟 Overview
 
-The **AI Dev Assistant** is a high-performance, expert-level dashboard designed to accelerate every stage of the development lifecycle. From advanced code reviews and SQL generation to step-by-step technology onboarding, this platform bridges the gap between raw code and production-ready intelligence.
+The **SagarStudio AI** is a high-performance, expert-level dashboard designed to accelerate every stage of the development lifecycle. From advanced code reviews and SQL generation to step-by-step technology onboarding, this platform bridges the gap between raw code and production-ready intelligence.
 
 Built with a **Glassmorphism-inspired design system**, the assistant leverages **GPT-4o** but goes beyond simple chat; it implements structured prompts, framework-aware context injection, and guaranteed JSON delivery for a reliable, IDE-like experience.
 
