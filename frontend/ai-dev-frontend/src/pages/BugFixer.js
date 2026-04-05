@@ -17,7 +17,7 @@ export default function BugFixer() {
   return user; // Always returns null
 }`;
   const [code, setCode] = useState(defaultCode);
-  const [language, setLanguage] = useState('JavaScript');
+  const [language, setLanguage] = useState('javascript');
   const [framework, setFramework] = useState('None');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -47,13 +47,13 @@ export default function BugFixer() {
                   select size="small" label="Language" value={language} onChange={(e) => setLanguage(e.target.value)}
                   sx={{ width: '140px', '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
                 >
-                  {LANGUAGES.map((l) => <MenuItem key={l} value={l}>{l}</MenuItem>)}
+                  {LANGUAGES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
                 </TextField>
                 <TextField
                   select size="small" label="Framework" value={framework} onChange={(e) => setFramework(e.target.value)}
                   sx={{ width: '140px', '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
                 >
-                  {FRAMEWORKS.map((f) => <MenuItem key={f} value={f}>{f}</MenuItem>)}
+                  {FRAMEWORKS.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
                 </TextField>
               </Box>
               <Button
@@ -65,7 +65,7 @@ export default function BugFixer() {
               </Button>
             </Box>
             <Box className="monaco-container" sx={{ flexGrow: 1 }}>
-              <Editor height="100%" language={language.toLowerCase()} theme="vs-dark" value={code} onChange={(value) => setCode(value)} options={{ minimap: { enabled: false }, fontSize: 14 }} />
+              <Editor height="100%" language={language} theme="vs-dark" value={code} onChange={(value) => setCode(value)} options={{ minimap: { enabled: false }, fontSize: 14 }} />
             </Box>
           </Box>
         </Grid>
@@ -79,7 +79,7 @@ export default function BugFixer() {
                 <CheckCircleOutlineIcon /> Fixed Code
               </Typography>
               <Box className="monaco-container" sx={{ flexGrow: 1, minHeight: 0 }}>
-                <Editor height="100%" language={language.toLowerCase()} theme="vs-dark" value={result.fixed_code || '// No fixed code provided'} options={{ readOnly: true, minimap: { enabled: false }, fontSize: 14 }} />
+                <Editor height="100%" language={language} theme="vs-dark" value={result.fixed_code || '// No fixed code provided'} options={{ readOnly: true, minimap: { enabled: false }, fontSize: 14 }} />
               </Box>
             </Box>
 

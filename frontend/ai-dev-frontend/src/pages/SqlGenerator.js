@@ -51,7 +51,7 @@ export default function SqlGenerator() {
                 sx={{ mb: 2, '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: 'var(--glass-border)' } } }}
               >
                 {DATABASES.map((option) => (
-                  <MenuItem key={option} value={option}>{option}</MenuItem>
+                  <MenuItem key={option.value} value={option.value}>{option.label}</MenuItem>
                 ))}
               </TextField>
 

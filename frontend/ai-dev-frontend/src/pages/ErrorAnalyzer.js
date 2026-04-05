@@ -11,7 +11,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 
 export default function ErrorAnalyzer() {
   const [error, setError] = useState('');
-  const [language, setLanguage] = useState('JavaScript');
+  const [language, setLanguage] = useState('javascript');
   const [framework, setFramework] = useState('None');
   const [database, setDatabase] = useState('None');
   const [result, setResult] = useState(null);
@@ -54,13 +54,13 @@ export default function ErrorAnalyzer() {
                 select fullWidth size="small" label="Language" value={language} onChange={(e) => setLanguage(e.target.value)}
                 sx={{ '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
               >
-                {LANGUAGES.map((l) => <MenuItem key={l} value={l}>{l}</MenuItem>)}
+                {LANGUAGES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
               <TextField
                 select fullWidth size="small" label="Framework" value={framework} onChange={(e) => setFramework(e.target.value)}
                 sx={{ '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
               >
-                {FRAMEWORKS.map((f) => <MenuItem key={f} value={f}>{f}</MenuItem>)}
+                {FRAMEWORKS.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
             </Box>
 
@@ -68,7 +68,7 @@ export default function ErrorAnalyzer() {
               select fullWidth size="small" label="Database" value={database} onChange={(e) => setDatabase(e.target.value)}
               sx={{ '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
             >
-              {DATABASES.map((db) => <MenuItem key={db} value={db}>{db}</MenuItem>)}
+              {DATABASES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
             </TextField>
 
             <TextField

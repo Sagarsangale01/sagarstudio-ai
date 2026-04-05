@@ -9,7 +9,7 @@ import ApiIcon from '@mui/icons-material/Api';
 
 export default function ApiGenerator() {
   const [description, setDescription] = useState('Create a RESTful API for a blog application with endpoints to create, read, update, and delete posts, as well as a user authentication system.');
-  const [language, setLanguage] = useState('Node.js');
+  const [language, setLanguage] = useState('javascript');
   const [framework, setFramework] = useState('Express');
   const [database, setDatabase] = useState('MongoDB');
 
@@ -53,15 +53,15 @@ export default function ApiGenerator() {
               <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>API Architecture</Typography>
 
               <TextField select fullWidth label="Language" value={language} onChange={(e) => setLanguage(e.target.value)} sx={{ mb: 2, mt: 2, '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}>
-                {LANGUAGES.map((l) => <MenuItem key={l} value={l}>{l}</MenuItem>)}
+                {LANGUAGES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
 
               <TextField select fullWidth label="Framework" value={framework} onChange={(e) => setFramework(e.target.value)} sx={{ mb: 2, '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}>
-                {FRAMEWORKS.map((f) => <MenuItem key={f} value={f}>{f}</MenuItem>)}
+                {FRAMEWORKS.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
 
               <TextField select fullWidth label="Database" value={database} onChange={(e) => setDatabase(e.target.value)} sx={{ mb: 2, '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}>
-                {DATABASES.map((db) => <MenuItem key={db} value={db}>{db}</MenuItem>)}
+                {DATABASES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
 
               <TextField

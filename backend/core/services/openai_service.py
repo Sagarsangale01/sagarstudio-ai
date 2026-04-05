@@ -7,10 +7,17 @@ def generate_response(prompt):
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You are a senior code assistant. Always return valid JSON only."},
+            {"role": "system", "content": "You are a senior code assistant. Always return valid JSON only. Do NOT wrap the JSON in markdown code blocks like ```json."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.2,
         response_format={"type": "json_object"}
     )
-    return response.choices[0].message.content
+    content = response.choices[0].message.content.strip()
+    if content.startswith("```json"):
+        content = content[7:]
+    elif content.startswith("```"):
+        content = content[3:]
+    if content.endswith("```"):
+        content = content[:-3]
+    return content.strip()

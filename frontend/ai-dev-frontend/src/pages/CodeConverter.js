@@ -22,8 +22,8 @@ export default function CodeConverter() {
     return sequence`;
 
   const [code, setCode] = useState(defaultCode);
-  const [sourceLang, setSourceLang] = useState('Python');
-  const [targetLang, setTargetLang] = useState('JavaScript');
+  const [sourceLang, setSourceLang] = useState('python');
+  const [targetLang, setTargetLang] = useState('javascript');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -53,7 +53,7 @@ export default function CodeConverter() {
                   select size="small" label="Source Language" value={sourceLang} onChange={(e) => setSourceLang(e.target.value)}
                   sx={{ width: '150px', '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
                 >
-                  {LANGUAGES.map((l) => <MenuItem key={"source-" + l} value={l}>{l}</MenuItem>)}
+                  {LANGUAGES.map((o) => <MenuItem key={"source-" + o.value} value={o.value}>{o.label}</MenuItem>)}
                 </TextField>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                   <SyncAltIcon sx={{ color: 'var(--text-secondary)' }} />
@@ -62,7 +62,7 @@ export default function CodeConverter() {
                   select size="small" label="Target Language" value={targetLang} onChange={(e) => setTargetLang(e.target.value)}
                   sx={{ width: '150px', '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
                 >
-                  {LANGUAGES.map((l) => <MenuItem key={"target-" + l} value={l}>{l}</MenuItem>)}
+                  {LANGUAGES.map((o) => <MenuItem key={"target-" + o.value} value={o.value}>{o.label}</MenuItem>)}
                 </TextField>
               </Box>
 
@@ -75,7 +75,7 @@ export default function CodeConverter() {
               </Button>
             </Box>
             <Box className="monaco-container" sx={{ flexGrow: 1 }}>
-              <Editor height="100%" language={sourceLang.toLowerCase()} theme="vs-dark" value={code} onChange={(value) => setCode(value)} options={{ minimap: { enabled: false }, fontSize: 14 }} />
+              <Editor height="100%" language={sourceLang} theme="vs-dark" value={code} onChange={(value) => setCode(value)} options={{ minimap: { enabled: false }, fontSize: 14 }} />
             </Box>
           </Box>
         </Grid>
@@ -97,7 +97,7 @@ export default function CodeConverter() {
               <Box className="monaco-container" sx={{ flexGrow: 1, mb: result?.notes?.length > 0 ? 2 : 0 }}>
                 <Editor
                   height="100%"
-                  language={targetLang.toLowerCase()}
+                  language={targetLang}
                   theme="vs-dark"
                   value={result?.converted_code || '// Converted code will appear here...'}
                   options={{ readOnly: true, minimap: { enabled: false }, fontSize: 14 }}

@@ -12,7 +12,7 @@ import CodeIcon from '@mui/icons-material/Code';
 
 export default function NewTechGuide() {
   const [goal, setGoal] = useState('Create a simple REST API with a database CRUD');
-  const [targetLang, setTargetLang] = useState('Go');
+  const [targetLang, setTargetLang] = useState('go');
   const [targetFramework, setTargetFramework] = useState('Gin');
   const [targetDb, setTargetDb] = useState('None');
   const [result, setResult] = useState(null);
@@ -67,14 +67,14 @@ export default function NewTechGuide() {
                 onChange={(e) => setTargetLang(e.target.value)}
                 sx={{ '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
               >
-                {LANGUAGES.map((l) => <MenuItem key={l} value={l}>{l}</MenuItem>)}
+                {LANGUAGES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
               <TextField
                 select fullWidth label="Framework" value={targetFramework}
                 onChange={(e) => setTargetFramework(e.target.value)}
                 sx={{ '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
               >
-                {FRAMEWORKS.map((f) => <MenuItem key={f} value={f}>{f}</MenuItem>)}
+                {FRAMEWORKS.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
               </TextField>
             </Box>
 
@@ -83,7 +83,7 @@ export default function NewTechGuide() {
               onChange={(e) => setTargetDb(e.target.value)}
               sx={{ mb: 2, '& .MuiOutlinedInput-root fieldset': { borderColor: 'var(--glass-border)' } }}
             >
-              {DATABASES.map((db) => <MenuItem key={db} value={db}>{db}</MenuItem>)}
+              {DATABASES.map((o) => <MenuItem key={o.value} value={o.value}>{o.label}</MenuItem>)}
             </TextField>
 
             <TextField
